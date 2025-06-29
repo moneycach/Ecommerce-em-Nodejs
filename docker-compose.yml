@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  evershop:
+    image: evershop/evershop:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./evershop-data:/var/www/app/data
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=evershop
+      - DB_USER=root
+      - DB_PASSWORD=evershop
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=evershop
+      - MYSQL_DATABASE=evershop
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"

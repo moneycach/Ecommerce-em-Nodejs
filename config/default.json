@@ -1,0 +1,92 @@
+{
+  "shop": {
+    "title": "Minha Loja Virtual",
+    "description": "Uma loja virtual completa com EverShop",
+    "logo": "/assets/logo.png",
+    "favicon": "/assets/favicon.ico",
+    "contact": {
+      "email": "contato@minhaloja.com.br",
+      "phone": "+55 11 99999-9999",
+      "address": "Rua Exemplo, 123 - São Paulo, SP"
+    },
+    "currency": {
+      "code": "BRL",
+      "symbol": "R$",
+      "position": "left",
+      "thousandSeparator": ".",
+      "decimalSeparator": ",",
+      "precision": 2
+    },
+    "language": "pt_BR",
+    "timezone": "America/Sao_Paulo"
+  },
+  "system": {
+    "database": {
+      "host": "${DB_HOST}",
+      "port": "${DB_PORT}",
+      "database": "${DB_NAME}",
+      "user": "${DB_USER}",
+      "password": "${DB_PASSWORD}"
+    },
+    "server": {
+      "port": 3000,
+      "host": "0.0.0.0"
+    },
+    "session": {
+      "secret": "evershop-session-secret",
+      "cookie": {
+        "maxAge": 86400000
+      }
+    },
+    "extensions": [
+      {
+        "name": "clerk-auth",
+        "path": "${BASE_PATH}/extensions/clerk-auth",
+        "enabled": true
+      },
+      {
+        "name": "stripe-payment",
+        "path": "${BASE_PATH}/extensions/stripe-payment",
+        "enabled": true
+      }
+    ]
+  },
+  "checkout": {
+    "allowCountries": ["BR"],
+    "defaultCountry": "BR",
+    "defaultAddressFields": [
+      "full_name",
+      "telephone",
+      "address_1",
+      "address_2",
+      "city",
+      "province",
+      "country",
+      "postcode"
+    ],
+    "shippingMethods": [
+      {
+        "name": "Frete Padrão",
+        "code": "standard",
+        "description": "Entrega em 3-5 dias úteis",
+        "cost": 15.00,
+        "enabled": true
+      },
+      {
+        "name": "Frete Expresso",
+        "code": "express",
+        "description": "Entrega em 1-2 dias úteis",
+        "cost": 25.00,
+        "enabled": true
+      }
+    ],
+    "paymentMethods": [
+      {
+        "name": "Stripe",
+        "code": "stripe",
+        "description": "Pague com segurança usando seu cartão de crédito via Stripe",
+        "enabled": true
+      }
+    ]
+  }
+}

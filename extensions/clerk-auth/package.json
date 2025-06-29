@@ -1,0 +1,23 @@
+{
+  "name": "clerk-auth",
+  "version": "1.0.0",
+  "description": "Extensão para autenticação usando Clerk no EverShop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "evershop",
+    "extension",
+    "authentication",
+    "clerk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.10.2"
+  },
+  "evershop": {
+    "enabled": true
+  }
+}

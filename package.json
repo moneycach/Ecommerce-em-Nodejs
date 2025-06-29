@@ -1,0 +1,29 @@
+{
+  "name": "evershop-ecommerce",
+  "version": "1.0.0",
+  "description": "Loja virtual usando EverShop com autenticação Clerk e pagamentos via Stripe",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "logs": "docker-compose logs -f",
+    "restart": "docker-compose restart",
+    "install-deps": "npm install",
+    "backup": "docker exec -it evershop-ecommerce_mysql_1 sh -c 'mysqldump -u root -pevershop evershop > /var/lib/mysql/backup.sql'"
+  },
+  "keywords": [
+    "ecommerce",
+    "evershop",
+    "nodejs",
+    "react",
+    "graphql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

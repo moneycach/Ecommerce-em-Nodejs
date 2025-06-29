@@ -1,0 +1,23 @@
+{
+  "name": "stripe-payment",
+  "version": "1.0.0",
+  "description": "Extensão para processamento de pagamentos via Stripe no EverShop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "evershop",
+    "extension",
+    "payment",
+    "stripe"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^12.0.0"
+  },
+  "evershop": {
+    "enabled": true
+  }
+}
